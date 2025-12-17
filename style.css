@@ -673,3 +673,63 @@ body {
 .service-image-container img:hover {
   transform: scale(1.05);
 }
+
+/* General Header Styles */
+.site-header {
+  display: flex; /* Flexbox for positioning */
+  align-items: center; /* Vertically center content */
+  justify-content: space-between; /* Place logo and navigation at opposite ends */
+  padding: 15px 20px; /* Space for breathing room */
+  background: #f8f8f8; /* Light background for the header */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle separator line */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05); /* Optional subtle shadow */
+}
+
+/* Logo Section */
+.logo-container {
+  max-width: 120px; /* Set max width for logo to prevent it stretching */
+  height: auto; /* Adjust height proportionally */
+}
+
+.logo-container img {
+  width: 100%; /* Make the logo fit inside the container */
+  height: auto;
+  display: block; /* Ensure no unnecessary space below the image */
+}
+
+/* Navigation Menu Styles */
+.main-navigation ul {
+  display: flex; /* Horizontal list */
+  gap: 20px; /* Spacing between menu items */
+  list-style: none; /* No bullets */
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
+}
+
+.main-navigation li {
+  font-size: 16px; /* Make the items readable */
+}
+
+.main-navigation a {
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Text color */
+  font-weight: 500; /* Slightly bolder text */
+  transition: color 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.main-navigation a:hover {
+  color: #d4af37; /* Gold-like hover color */
+}
+
+/* Responsive Design - Stack the logo and navigation on smaller screens */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column; /* Stack logo and navigation */
+    align-items: flex-start; /* Align everything to the left */
+  }
+
+  .main-navigation ul {
+    flex-direction: column; /* Stack navigation items */
+    gap: 10px; /* Adjust spacing between menu items */
+  }
+}
