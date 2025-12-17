@@ -674,4 +674,26 @@ body {
   transform: scale(1.05);
 }
 
-/
+/* Follow Section Styling */
+.follow-section {
+  display: flex; /* Arrange text and icon horizontally */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  gap: 8px; /* Space between "Follow us" and the Instagram icon */
+  padding: 20px; /* Add spacing around the section */
+  background-color: #f8f8f8; /* Light background color */
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* Border to separate from the page */
+  font-size: 16px; /* Adjust text size */
+}
+
+/* Instagram Icon Styling */
+.follow-section .instagram-icon {
+  font-size: 24px; /* Size of the Instagram icon */
+  color: #C13584; /* Instagram-like color */
+  text-decoration: none; /* Remove underline */
+  transition: transform 0.2s ease; /* Add a hover smooth effect */
+}
+
+.follow-section .instagram-icon:hover {
+  transform: scale(1.1); /* Slight zoom-in effect */
+}
