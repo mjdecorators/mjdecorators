@@ -1,0 +1,518 @@
+:root{
+  --gold:#d4af37;
+  --black:#0c0c0c;
+  --dark:#151515;
+  --light:#ffffff;
+  --muted-2: #bdbdbd;
+}
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* BODY */
+body{
+  font-family:'Poppins',Arial,sans-serif;
+  background:var(--black);
+  color:var(--light);
+  line-height:1.6;
+  animation:pageLoad 1s ease-in-out;
+}
+
+@keyframes pageLoad{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* HEADER */
+header{
+  background:var(--dark);
+  padding:16px 28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:2px solid var(--gold);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 12px 40px rgba(0,0,0,0.85);
+
+}
+
+header img{
+  height:55px;
+}
+
+nav a{
+  color:#fff;
+  margin-left:22px;
+  text-decoration:none;
+  font-weight:500;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+/* HERO */
+.hero{
+  padding:64px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#000,#1a1a1a);
+}
+
+.hero-inner{
+  max-width:980px;
+  margin:0 auto;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:44px;
+  line-height:1.02;
+  margin-bottom:6px;
+  color:var(--gold);
+}
+
+.hero-lead{
+  max-width:820px;
+  color:#e6e6e6;
+  font-size:17px;
+  margin:0 auto;
+}
+
+.hero-badges{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  justify-content:center;
+  margin-top:6px;
+}
+
+.badge-logo{
+  height:62px;
+  width:62px;
+  object-fit:cover;
+  border-radius:10px;
+  border:2px solid rgba(212,175,55,0.12);
+}
+
+.badge-labels{
+  color:#fff;
+  font-weight:700;
+  letter-spacing:0.2px;
+}
+
+.badge-trust{
+  background:rgba(255,255,255,0.03);
+  padding:6px 10px;
+  border-radius:10px;
+  color:var(--gold);
+  font-weight:700;
+}
+
+.hero-ctas{
+  display:flex;
+  gap:12px;
+  margin-top:8px;
+}
+
+.btn.primary{
+  background: linear-gradient(135deg,#ffd86b,#d4af37);
+  color:#111;
+  padding:14px 34px;
+  border-radius:40px;
+  font-weight:800;
+}
+
+.btn.outline{
+  background:transparent;
+  border:1px solid rgba(212,175,55,0.18);
+  color:var(--gold);
+  padding:12px 20px;
+  border-radius:12px;
+}
+
+.btn.outline:hover{
+  background:rgba(212,175,55,0.04);
+}
+
+/* BUTTON */
+.btn{
+  background: linear-gradient(135deg,#d4af37,#fff1a8);
+  color:#000;
+  padding:15px 38px;
+  border-radius:50px;
+  font-weight:700;
+  letter-spacing:0.5px;
+  box-shadow:0 12px 30px rgba(212,175,55,0.4);
+  transition:all .35s ease;
+}
+
+.btn:hover{
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:0 18px 45px rgba(212,175,55,0.6);
+}
+
+.btn.secondary{
+  background:transparent;
+  color:var(--gold);
+  border:1px solid rgba(212,175,55,0.16);
+  padding:10px 16px;
+  border-radius:12px;
+  box-shadow:none;
+}
+.btn.secondary:hover{background:rgba(212,175,55,0.06);transform:translateY(-3px)}
+
+/* SECTIONS */
+.section{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.section h2{
+  text-align:center;
+  margin-bottom:45px;
+  color:var(--gold);
+  font-size:30px;
+}
+
+/* SERVICES */
+.service{
+  background:var(--dark);
+  padding:22px;
+  border-radius:18px;
+  border:1px solid rgba(212,175,55,.25);
+  text-align:center;
+
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+
+  height:auto;        /* 🔥 IMPORTANT */
+  overflow:hidden;   /* 🔥 IMPORTANT */
+
+  transition:.35s;
+}
+
+.service:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(212,175,55,.25);
+}
+
+/* SERVICE IMAGES - improved responsive layout to avoid overlap */
+.service-images{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:stretch;
+  justify-content:space-between;
+  margin-top:10px;
+}
+
+/* Two-up images by default, scale down on small screens */
+.service-images img{
+  flex:1 1 calc(50% - 6px);
+  max-width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:12px;
+  border:1px solid rgba(212,175,55,0.35);
+  transition:transform .25s ease, box-shadow .25s ease;
+  display:block;
+}
+
+/* If a service has only one image, make it full width and slightly taller */
+.service-images img:only-child{
+  flex-basis:100%;
+  height:200px;
+}
+
+.service-images img:hover{
+  transform:scale(1.04);
+  box-shadow:0 18px 40px rgba(0,0,0,0.6);
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+  grid-auto-rows:1fr;
+  align-items:start;
+}
+
+.gallery-img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
+
+.gallery-link{
+  display:block;
+  overflow:hidden;
+  border-radius:12px;
+  position:relative;
+}
+
+.gallery-link::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,0.18));
+  opacity:0;
+  transition:opacity .25s ease;
+}
+
+.gallery-link:hover::after{
+  opacity:1;
+}
+
+.gallery-link .caption{
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  color:#fff;
+  font-weight:600;
+  font-size:14px;
+  text-shadow:0 6px 18px rgba(0,0,0,.6);
+}
+
+/* CONTACT FORM */
+.contact{
+  max-width:500px;
+  margin:auto;
+  display:grid;
+  gap:16px;
+}
+
+.contact input,
+.contact textarea{
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid var(--gold);
+  background:#000;
+  color:#fff;
+  font-size:15px;
+}
+
+.contact input:focus,
+.contact textarea:focus{
+  outline:none;
+  box-shadow:0 0 10px rgba(212,175,55,.35);
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  color:var(--gold);
+  text-align:center;
+  padding:30px;
+  border-top:2px solid var(--gold);
+  font-size:14px;
+  opacity:.95;
+}
+
+/* FLOATING SOCIAL BUTTONS */
+.whatsapp,
+.instagram,
+.google-reviews{
+  position:fixed;
+  right:20px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 8px 22px rgba(0,0,0,.45);
+  transition:.3s;
+  z-index:9999;
+}
+
+.whatsapp{bottom:20px;background:#25D366;}
+.instagram{bottom:90px;background:#E1306C;}
+.google-reviews{bottom:160px;background:#4285F4;}
+
+.whatsapp:hover,
+.instagram:hover,
+.google-reviews:hover{
+  transform:translateY(-6px) scale(1.05);
+}
+
+/* REVIEWS STRIP (top) */
+.reviews-strip{
+  max-width:1100px;
+  margin:12px auto 18px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 14px;
+  border-radius:12px;
+  background:linear-gradient(90deg, rgba(212,175,55,0.06), rgba(255,255,255,0.01));
+  border:1px solid rgba(212,175,55,0.06);
+}
+.reviews-left{display:flex;gap:12px;align-items:center}
+.reviews-badge{background:var(--gold);color:#000;padding:8px 12px;border-radius:8px;font-weight:700;display:flex;align-items:center;gap:8px}
+.reviews-carousel{flex:1;display:flex;gap:10px;align-items:center;overflow:hidden;position:relative}
+.testimonial{min-width:240px;flex:0 0 auto;background:transparent;color:var(--light);padding:8px 10px;border-radius:8px;font-size:14px;opacity:.6;transition:opacity .28s ease,transform .28s ease}
+.testimonial strong{display:block;color:var(--gold);font-weight:700}
+.testimonial.active{opacity:1;transform:translateY(-2px)}
+.reviews-cta{margin-left:12px}
+.reviews-cta .btn{padding:8px 14px;border-radius:10px;font-size:14px}
+
+/* Compact hero banner centered above CTA */
+.hero-banner{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  justify-content:center;
+  margin:18px auto 22px;
+  background:linear-gradient(90deg, rgba(212,175,55,0.03), rgba(255,255,255,0.01));
+  padding:10px 16px;
+  border-radius:14px;
+  max-width:780px;
+  border:1px solid rgba(212,175,55,0.06);
+}
+.hero-logo{ height:58px; border-radius:10px; border:1px solid rgba(212,175,55,0.06); }
+.hero-keywords{ color:#fff; font-weight:700; letter-spacing:0.3px; font-size:15px }
+
+@media(max-width:720px){
+  .hero{ padding:40px 18px }
+  .hero h1{ font-size:28px }
+  .badge-logo{ height:48px; width:48px }
+  .hero-ctas{ flex-direction:column }
+}
+
+/* Centered logo in hero (above lead paragraph) */
+.hero-center-logo{
+  width:110px;
+  height:110px;
+  object-fit:cover;
+  border-radius:14px;
+  border:3px solid rgba(212,175,55,0.12);
+  box-shadow:0 12px 36px rgba(0,0,0,0.55);
+  margin:10px 0 6px;
+  display:block;
+}
+
+@media(max-width:720px){
+  .hero-center-logo{ width:86px; height:86px }
+}
+
+/* Slightly tighten hero spacing */
+.hero-inner{ gap:14px }
+
+/* UI polish overrides (added for a more professional look) */
+
+/* Buttons */
+.btn.secondary{
+  background:transparent;
+  color:var(--gold);
+  border:1px solid rgba(212,175,55,0.16);
+  padding:10px 16px;
+  border-radius:12px;
+  box-shadow:none;
+}
+.btn.secondary:hover{background:rgba(212,175,55,0.06);transform:translateY(-3px)}
+
+/* Service box refinement */
+.service-box{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+.service-box .service-images{margin-top:8px}
+.service-box h3{margin-top:4px}
+
+/* Gallery: overlay caption and subtle grid rhythm */
+.gallery{grid-auto-rows:1fr;align-items:start}
+.gallery-link{position:relative;display:block}
+.gallery-link::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.18));opacity:0;transition:opacity .25s ease}
+.gallery-link:hover::after{opacity:1}
+.gallery-link .caption{position:absolute;left:12px;bottom:12px;color:#fff;font-weight:600;font-size:14px;text-shadow:0 6px 18px rgba(0,0,0,.6)}
+
+/* Lightbox controls */
+.popup-box{position:relative;display:flex;align-items:center;justify-content:center}
+#popupImg{max-width:98%;max-height:88vh;border-radius:12px}
+.popup .close-btn{position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.45);color:var(--gold);padding:6px 8px;border-radius:8px;cursor:pointer}
+
+/* Add keyboard and swipe hint */
+.popup .hint{position:absolute;left:12px;top:12px;color:#fff;opacity:.8;font-size:13px}
+
+/* Testimonials: smoother sliding */
+.reviews-carousel{position:relative}
+.reviews-carousel .testimonial{transition:opacity .45s ease, transform .45s ease}
+.reviews-carousel .testimonial{opacity:0;transform:translateY(6px)}
+.reviews-carousel .testimonial.active{opacity:1;transform:none}
+
+/* Trust badges */
+.trust{display:flex;gap:10px;justify-content:center;margin-top:16px}
+.badge{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:10px;color:var(--muted-2);font-weight:600;border:1px solid rgba(255,255,255,0.03)}
+
+/* Footer refinement */
+footer{opacity:.95}
+
+/* Accessibility focus outlines */
+a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(212,175,55,0.12);outline-offset:3px}
+
+/* Mobile: compact header and gallery spacing */
+@media(max-width:600px){
+  header{padding:12px 16px}
+  .reviews-strip{flex-direction:column;gap:10px;align-items:flex-start}
+  .reviews-carousel{overflow:hidden}
+  .gallery{gap:12px}
+  .gallery-img{height:160px}
+}
+
+/* Small bugfix: ensure gold-text uses standard background-clip too */
+.gold-text{background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+/* End of polish overrides */
+
+/* Why Choose section */
+.why-choose{ padding-top:24px }
+.why-choose .why-lead{ text-align:center; max-width:820px; margin:0 auto 20px; color:#ddd }
+.why-cards{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; max-width:1100px; margin:0 auto }
+.why-card{ background:rgba(255,255,255,0.02); padding:18px; border-radius:14px; text-align:center; border:1px solid rgba(255,255,255,0.03) }
+.why-icon{ width:64px; height:64px; border-radius:12px; display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:linear-gradient(135deg,rgba(212,175,55,0.12),rgba(212,175,55,0.05)); color:var(--gold); font-size:22px }
+.why-card h3{ color:var(--gold); margin-bottom:6px }
+.why-card p{ color:#d9d9d9; font-size:14px }
+
+@media(max-width:900px){ .why-cards{ grid-template-columns:repeat(2,1fr) } }
+@media(max-width:480px){ .why-cards{ grid-template-columns:1fr } }
+/* IMAGE LIGHTBOX */
+.img-lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:100000;
+}
+
+.img-lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:16px;
+  border:3px solid var(--gold);
+  box-shadow:0 0 40px rgba(212,175,55,.35);
+}
+
+.close-lightbox{
+  position:absolute;
+  top:25px;
+  right:30px;
+  font-size:40px;
+  color:var(--gold);
+  cursor:pointer;
+}
